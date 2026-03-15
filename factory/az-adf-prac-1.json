@@ -1,0 +1,10 @@
+{
+	"name": "az-adf-prac-1",
+	"properties": {
+		"globalConfigurations": {
+			"factoryStagingLSReferenceName": "az_adls_prac_1",
+			"factoryStagingLSType": "LinkedServiceReference"
+		}
+	},
+	"location": "centralus"
+}
