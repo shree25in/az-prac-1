@@ -33,7 +33,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from exptrk.daily_exp;"
+						"query": {
+							"value": "select * from exptrk.daily_exp where id > @activity('Lookup').output.value",
+							"type": "Expression"
+						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
