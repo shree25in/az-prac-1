@@ -54,15 +54,16 @@
 				}
 			},
 			{
-				"name": "If Condition1",
-				"type": "IfCondition",
-				"dependsOn": [],
-				"userProperties": []
-			},
-			{
 				"name": "If Condition2",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "src_lkp",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"ifTrueActivities": [
@@ -91,7 +92,7 @@
 								"source": {
 									"type": "MySqlSource",
 									"query": {
-										"value": "select * from exptrk.daily_exp where id > @{activity('Lookup').output.firstRow.watermarkvalue}",
+										"value": "select * from exptrk.daily_exp where id > @{activity('src_lkp').output.firstRow.id}",
 										"type": "Expression"
 									}
 								},
