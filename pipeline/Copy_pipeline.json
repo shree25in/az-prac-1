@@ -232,7 +232,13 @@
 							"outputs": [
 								{
 									"referenceName": "DelimitedText1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"p_FileName": {
+											"value": "@concat('daily_expenses_', formatDateTime(utcnow(), 'yyyyMMdd_HHmm'), '.csv')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
