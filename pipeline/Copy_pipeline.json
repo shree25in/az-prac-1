@@ -34,7 +34,7 @@
 					"source": {
 						"type": "MySqlSource",
 						"query": {
-							"value": "select * from exptrk.daily_exp where id > @{activity('Lookup').output.firstRow.id}",
+							"value": "select * from exptrk.daily_exp where id > @{activity('Lookup').output.firstRow.watermarkvalue}",
 							"type": "Expression"
 						}
 					},
